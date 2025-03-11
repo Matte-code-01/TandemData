@@ -1,10 +1,10 @@
 name: Post JSON File to Two URLs
 
 on:
-  push:
-    branches:
+	push:
+  	branches:
       - main # Runs only when pushing to the main branch
-  workflow_dispatch: # Allows manual trigger
+	workflow_dispatch: # Allows manual trigger
   
 jobs:
   post_json:
@@ -16,7 +16,7 @@ jobs:
       - name: Send JSON Data to First URL
         run: |
           curl -X POST "https://:HToijD_jTRKduUKPu2BGNQ@tandem.autodesk.com/api/v1/timeseries/models/urn:adsk.dtm:dUX5LWybR_KIRck7hRSAjQ/streams/AQAAAPC15FLtZUfHuK1speKenTwAAAAA" \
-              -H "Content-Type: application/json" \
+                -H "Content-Type: application/json" \
               -d @stream.json
               
       - name: Send JSON Data to Second URL
